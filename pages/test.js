@@ -7,9 +7,14 @@ let operadores = [];
 let concatNum = "";
 
 const mostrarNoHtml = () =>
-  (document.querySelector("#visor").innerHTML = concatNum);
+  (document.querySelector("#visor").innerHTML = concatNum || 0);
 
-const clicar = (num = null) => {
+// const mostrarNoHtml = () =>
+//   concatNum
+//     ? (document.querySelector("#visor").innerHTML = concatNum || "0")
+//     : (document.querySelector("#visor").innerHTML = "0");
+
+const clicar = (num = 0) => {
   concatNum = `${concatNum}${num}`;
   if (isNaN(num)) operadores.push(num);
   mostrarNoHtml();
@@ -23,8 +28,8 @@ const resultado = () => {
 };
 
 const limpar = () => {
-  concatNum = "";
   operadores = [];
+  concatNum = "";
   mostrarNoHtml();
 };
 
