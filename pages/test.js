@@ -17,11 +17,9 @@ const clickNumeros = (num = 0) => {
 };
 
 const clickOperadores = (operador = 0) => {
-  if (!operacao) {
-    operacao = `${entrada}${operador}`;
-  } else {
-    operacao = `${eval(operacao)}${operador}`;
-  }
+  !operacao
+    ? (operacao = `${entrada}${operador}`)
+    : (operacao = `${eval(operacao)}${operador}`);
   entrada = "";
   printaOperacao();
 };
