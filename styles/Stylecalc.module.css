@@ -1,66 +1,96 @@
-.calcBody{
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    justify-content: end;
-    user-select: none;
+.calcBody {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: end;
+  user-select: none;
 }
 
-.containerLeft{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
+.containerLeft {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 }
-.containerRight{
-    float: right;
-    width: 600px;
-    background-color: #202020;
+.containerRight {
+  float: right;
+  width: 600px;
+  background-color: #202020;
 }
-.containerTop{
-    height: 55vh;
-    background-color: #202020;
-    color: #ffffff;
-    display: flex;
-    font-size: 5em;
-    text-align: end;
-    justify-content: center;
-    flex-direction: column;
-    padding-right: 10px;
-    word-wrap: break-word;
-    overflow: auto;
-}
-
-.containerBot{
-    height: 100%;
-    width: 100%;
-    padding: 5px;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    background-color: #202020;
-}
-.tecla{
-    border: none;
-    border-radius: 3px;
-    margin: 2px;
-    font-size: 1.4em;
-    background-color: #3c3c3c;
-    color: #ffffff;
-}
-.dif{
-    background-color: #323232;
-}
-.dif2{
-    background-color: #535353;
-}
-.tecla:hover{
-    background-color: #323232;
-}
-.dif:hover{
-    background-color: #3c3c3c;
+.containerTop {
+  height: 25vh;
+  background-color: #202020;
+  color: #ffffff;
+  font-size: 5em;
+  text-align: end;
+  padding-right: 10px;
+  word-wrap: break-word;
+  overflow: auto;
+  display: flex;
+  justify-content: top;
+  flex-direction: column;
+  /* max-width: 50vw; */
 }
 
-@media (max-width: 600px){
-    .containerRight{
-        display: none;
-    }
+.operacoes {
+  height: 25vh;
+  font-size: 2em;
+  text-align: end;
+  color: #ffffff;
+  background-color: #202020;
+  padding-right: 10px;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  letter-spacing: 5px;
+}
+
+.containerTop::-webkit-scrollbar {
+  width: 5px;
+}
+
+.containerTop::-webkit-scrollbar-button {
+  display: none;
+}
+
+.containerTop::-webkit-scrollbar-track-piece {
+  background-color: #202020;
+}
+
+.containerTop::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+
+.containerBot {
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #202020;
+}
+.tecla {
+  border: none;
+  border-radius: 3px;
+  margin: 2px;
+  font-size: 1.4em;
+  background-color: #3c3c3c;
+  color: #ffffff;
+}
+.dif {
+  background-color: #323232;
+}
+.dif2 {
+  background-color: #535353;
+}
+.tecla:hover {
+  background-color: #323232;
+}
+.dif:hover {
+  background-color: #3c3c3c;
+}
+
+@media (max-width: 600px) {
+  .containerRight {
+    display: none;
+  }
 }

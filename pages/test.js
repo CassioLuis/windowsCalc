@@ -1,98 +1,105 @@
-// import { useState } from "react";
 import styles from "../styles/Stylecalc.module.css";
 
-// const [view, setView] = useState(0)
+let entrada = "";
+let operacao = "";
 
-let operadores = [];
-let concatNum = "";
+const printaEntrada = () =>
+  (document.querySelector("#visor").innerHTML = entrada || 0);
 
-const mostrarNoHtml = () =>
-  (document.querySelector("#visor").innerHTML = concatNum || 0);
+const printaOperacao = () =>
+  (document.querySelector("#operacoes").innerHTML = operacao);
 
-// const mostrarNoHtml = () =>
-//   concatNum
-//     ? (document.querySelector("#visor").innerHTML = concatNum || "0")
-//     : (document.querySelector("#visor").innerHTML = "0");
+const clickNumeros = (num = 0) => {
+  if (entrada.length < "16") entrada = `${entrada}${num}`;
+  printaEntrada();
+  if (operacao.length < "16") operacao = `${operacao}${num}`;
+  console.log(operacao);
+};
 
-const clicar = (num = 0) => {
-  concatNum = `${concatNum}${num}`;
-  if (isNaN(num)) operadores.push(num);
-  mostrarNoHtml();
+const clickOperadores = (operador = 0) => {
+  if (!operacao) {
+    operacao = `${entrada}${operador}`;
+  } else {
+    operacao = `${eval(operacao)}${operador}`;
+  }
+  entrada = "";
+  printaOperacao();
 };
 
 const resultado = () => {
-  if (!concatNum || !operadores.length) return;
-  concatNum = eval(concatNum);
-  operadores = [];
-  mostrarNoHtml();
+  entrada = eval(operacao);
+  printaEntrada();
+  // operacao = "";
+  printaOperacao();
 };
 
 const limpar = () => {
-  operadores = [];
-  concatNum = "";
-  mostrarNoHtml();
+  entrada = "";
+  operacao = "";
+  printaEntrada();
+  printaOperacao();
 };
 
 export const teclado = [
   {
     nome: 7,
     className: `${styles.tecla}`,
-    fn: () => clicar(7),
+    fn: () => clickNumeros(7),
   },
   {
     nome: 8,
     className: `${styles.tecla}`,
-    fn: () => clicar(8),
+    fn: () => clickNumeros(8),
   },
   {
     nome: 9,
     className: `${styles.tecla}`,
-    fn: () => clicar(9),
+    fn: () => clickNumeros(9),
   },
   {
     nome: "+",
     className: `${styles.tecla} ${styles.dif}`,
-    fn: () => clicar("+"),
+    fn: () => clickOperadores("+", "operador"),
   },
   {
     nome: 4,
     className: `${styles.tecla}`,
-    fn: () => clicar(4),
+    fn: () => clickNumeros(4),
   },
   {
     nome: 5,
     className: `${styles.tecla}`,
-    fn: () => clicar(5),
+    fn: () => clickNumeros(5),
   },
   {
     nome: 6,
     className: `${styles.tecla}`,
-    fn: () => clicar(6),
+    fn: () => clickNumeros(6),
   },
   {
     nome: "-",
     className: `${styles.tecla} ${styles.dif}`,
-    fn: () => clicar("-"),
+    fn: () => clickOperadores("-", "operador"),
   },
   {
     nome: 1,
     className: `${styles.tecla}`,
-    fn: () => clicar(1),
+    fn: () => clickNumeros(1),
   },
   {
     nome: 2,
     className: `${styles.tecla}`,
-    fn: () => clicar(2),
+    fn: () => clickNumeros(2),
   },
   {
     nome: 3,
     className: `${styles.tecla}`,
-    fn: () => clicar(3),
+    fn: () => clickNumeros(3),
   },
   {
     nome: "x",
     className: `${styles.tecla} ${styles.dif}`,
-    fn: () => clicar("*"),
+    fn: () => clickOperadores("*", "operador"),
   },
   {
     nome: "Del",
@@ -102,7 +109,7 @@ export const teclado = [
   {
     nome: 0,
     className: `${styles.tecla}`,
-    fn: () => clicar(0),
+    fn: () => clickNumeros(0),
   },
   {
     nome: "=",
@@ -112,6 +119,6 @@ export const teclado = [
   {
     nome: "/",
     className: `${styles.tecla} ${styles.dif}`,
-    fn: () => clicar("/"),
+    fn: () => clickOperadores("/", "operador"),
   },
 ];
