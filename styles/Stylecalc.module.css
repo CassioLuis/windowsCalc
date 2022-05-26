@@ -20,7 +20,7 @@
   height: 25vh;
   background-color: #202020;
   color: #ffffff;
-  font-size: 5em;
+  font-size: 4em;
   text-align: end;
   padding-right: 10px;
   word-wrap: break-word;
@@ -28,12 +28,13 @@
   display: flex;
   justify-content: top;
   flex-direction: column;
+  font-weight: bold;
   /* max-width: 50vw; */
 }
 
 .operacoes {
   height: 25vh;
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: end;
   color: #ffffff;
   background-color: #202020;
@@ -41,7 +42,8 @@
   display: flex;
   justify-content: end;
   flex-direction: column;
-  letter-spacing: 5px;
+  font-weight: bold;
+  /* letter-spacing: 5px; */
 }
 
 .containerTop::-webkit-scrollbar {
@@ -58,6 +60,10 @@
 
 .containerTop::-webkit-scrollbar-thumb {
   background-color: gray;
+}
+
+.sacao {
+  background-color: white;
 }
 
 .containerBot {

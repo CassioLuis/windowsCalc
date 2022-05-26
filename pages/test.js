@@ -17,11 +17,19 @@ const clickNumeros = (num = 0) => {
 };
 
 const clickOperadores = (operador = 0) => {
-  !operacao
-    ? (operacao = `${entrada}${operador}`)
-    : (operacao = `${eval(operacao)}${operador}`);
+  operacao = `${eval(operacao) || entrada}${operador}`;
+  // !operacao
+  //   ? (operacao = `${entrada}${operador}`)
+  //   : (operacao = `${eval(operacao)}${operador}`);
   entrada = "";
   printaOperacao();
+};
+
+export const desgraca = () => {
+  const para = document.createElement("p");
+  para.innerText = "This is MEU SACO PELUDO.";
+  document.querySelector("#teste").appendChild(para);
+  para.classList.add({styles.sacao});
 };
 
 const resultado = () => {
