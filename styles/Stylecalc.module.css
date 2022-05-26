@@ -15,6 +15,22 @@
   float: right;
   width: 600px;
   background-color: #202020;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 100%;
+}
+
+.sacao {
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  justify-content: end;
+  color: #ffffff;
+  background-color: #3c3c3c;
+  margin-bottom: 1%;
+  font-size: 2rem;
 }
 .containerTop {
   height: 25vh;
@@ -28,8 +44,6 @@
   display: flex;
   justify-content: top;
   flex-direction: column;
-  font-weight: bold;
-  /* max-width: 50vw; */
 }
 
 .operacoes {
@@ -42,11 +56,10 @@
   display: flex;
   justify-content: end;
   flex-direction: column;
-  font-weight: bold;
   /* letter-spacing: 5px; */
 }
 
-.containerTop::-webkit-scrollbar {
+.calcBody::-webkit-scrollbar {
   width: 5px;
 }
 
@@ -62,8 +75,20 @@
   background-color: gray;
 }
 
-.sacao {
-  background-color: white;
+.containerRight::-webkit-scrollbar {
+  width: 5px;
+}
+
+.containerRight::-webkit-scrollbar-button {
+  display: none;
+}
+
+.containerRight::-webkit-scrollbar-track-piece {
+  background-color: #202020;
+}
+
+.containerRight::-webkit-scrollbar-thumb {
+  background-color: gray;
 }
 
 .containerBot {

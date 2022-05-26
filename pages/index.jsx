@@ -15,16 +15,16 @@ export default function Maincalc() {
             <button
               className={atual.className}
               onClick={atual.fn}
-              onKeyDown={atual.fn}
+              // onKeyDown={atual.fn}
               key={idx}
             >
               {atual.nome}
             </button>
           ))}
 
-          <button id="botao" onClick={desgraca}>
+          {/* <button id="botao" onClick={desgraca}>
             TESTE
-          </button>
+          </button> */}
         </div>
       </div>
       <div id="teste" className={styles.containerRight}></div>
